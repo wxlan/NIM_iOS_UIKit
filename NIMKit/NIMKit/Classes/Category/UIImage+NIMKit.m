@@ -116,9 +116,11 @@
 
 + (UIImage *)nim_emoticonInKit:(NSString *)imageName
 {
-   NSBundle *bundle = [NIMKit sharedKit].emoticonBundle;
+   NSURL *url = [[NSBundle bundleForClass: NIMKit.class] URLForResource:[[NIMKit sharedKit] emoticonBundleName]
+                                                           withExtension:nil];
+    NSBundle *emotionBundle = [NSBundle bundleWithURL:url];
     NSString *name = [NIMKit_EmojiPath stringByAppendingPathComponent:imageName];
-    UIImage *image = [UIImage imageNamed:name inBundle:bundle compatibleWithTraitCollection:nil];
+    UIImage *image = [UIImage imageNamed:name inBundle: emotionBundle compatibleWithTraitCollection:nil];
     if (!image) {
         image = [UIImage imageNamed:imageName];
     }
