@@ -35,7 +35,7 @@ extern NSString *const NIMKitTeamInfoHasUpdatedNotification;
         _firer = [[NIMKitNotificationFirer alloc] init];
         _provider = [[NIMKitDataProviderImpl alloc] init];   //默认使用 NIMKit 的实现
         
-//         _layoutConfig = [[NIMCellLayoutConfig alloc] init];
+        _layoutConfig = [[NIMCellLayoutConfig alloc] init];
         
 //         [self preloadNIMKitBundleResource];
     }
